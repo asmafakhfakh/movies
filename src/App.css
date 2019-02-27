@@ -1,0 +1,106 @@
+
+.App{
+    position: relative;
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.logo{
+    height:80px;
+}
+.menu{
+    width:35%;
+}
+.name{
+    font-family: 'Sigmar One', cursive;
+    font-size: 50px;
+    position: absolute;
+    color: #bd041e;
+}
+.item{
+    margin:4%;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+}
+
+
+.search-bar{
+    margin:5%;
+}
+.search{
+    width:78%;
+    padding:1%;
+    border-radius: 5px;
+}
+.submit{
+    margin:1%;
+    padding:1%;
+    border-radius: 13px;
+    background: black;
+    color:white;
+    font-weight: bold;
+}
+.keyrate{
+    margin: 5%;
+    border: 1px solid rgb(255, 238, 0);
+    border-radius: 10px;
+    text-align: center;
+    padding:1%;
+}
+.rate-text{
+    color:white;
+    display: inline;
+    position: relative;
+    bottom:3px;
+}
+.addbutton{
+    width: 100%;
+    margin: 15%;
+    padding: 5%;
+    color:white;
+    font-weight: bold;
+    background: #bd041e;
+    border-radius: 10px;
+}
+
+
+
+
+
+.movie-card{
+    height: 88%;
+    overflow: hidden;
+    position: relative;
+}
+.poster{
+    width:100%
+}
+.title{
+    position: absolute;
+    bottom:0px;
+    color:black;
+    font-weight: bold;
+    background:rgba(255, 255, 255, 0.5);
+    width:90%;
+    padding:5%;
+    text-align: center;
+}
+.rating{
+    position: absolute;
+    top:0px;
+    z-index: 5;
+}
+.add-box{
+    height: 88%;
+    width:100%;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 800%;
+    text-align: center;
+}
+h1,h3{
+    color:white;
+}
