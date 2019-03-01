@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Movie from './movieCard'
 import {Container, Row, Col} from 'react-grid-system'
+import HOC from './HOC'
 
 
 class List extends Component {
@@ -25,4 +26,4 @@ class List extends Component {
     }
 }
  
-export default List;
+export default HOC(List);

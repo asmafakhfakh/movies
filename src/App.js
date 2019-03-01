@@ -7,6 +7,7 @@ import {Container, Row, Col} from 'react-grid-system'
 import Modal from 'react-responsive-modal';
 import Add from './add'
 
+
 import begin from './begin.jpg'
 import belle from './belle.jpg'
 import demain from './demain.jpg'
@@ -14,37 +15,6 @@ import bastardo from './bastardo.jpg'
 import frontiere from './frontière.jpg'
 import theeb from './theeb.jpg'
 
-
-// const moviesdata=[{
-//   image:begin,
-//   score:3,
-//   title:'Begin Agin - 2013'
-// },
-// {
-//   image:belle,
-//   score:7,
-//   title:'La Belle et la Meute - 2017'
-// },
-// {
-//   image:demain,
-//   score:7.4,
-//   title:'Demain Tout Commence - 2016'
-// },
-// {
-//   image:bastardo,
-//   score:7.6,
-//   title:'Bastardo - 2013'
-// },
-// {
-//   image:theeb,
-//   score:7.2,
-//   title:'Theeb - 2014'
-// },
-// {
-//   image:frontiere,
-//   score:6.6,
-//   title:'Les Frontières du Ciel - 2015'
-// }]
 
 class App extends Component {
   constructor(props) {
@@ -65,6 +35,7 @@ class App extends Component {
               {image:bastardo, score:7.6, title:'Bastardo - 2013'},
               {image:theeb, score:7.2, title:'Theeb - 2014'},
               {image:frontiere, score:6.6, title:'Les Frontières du Ciel - 2015'}],
+      isLoading:true,
     }
   }
 
@@ -80,6 +51,7 @@ class App extends Component {
     this.setState({filtred:this.state.moviesdata.filter((el,i)=>Math.round(el.score/2)>=nextValue && el.title.toLowerCase().indexOf(this.state.keyword)>-1)})
   }
 
+
   onOpenModal = () => {
     this.setState({ open: true });
   };
@@ -87,11 +59,18 @@ class App extends Component {
     this.setState({ open: false });
   };
 
+
   addData(link, rating, name){
     let x=this.state.moviesdata.concat({image:link, score:rating, title:name})
     this.setState({moviesdata:x},this.handleClick)
     this.setState({ open: false })
   }
+
+  componentDidMount(){
+    setTimeout(()=>{this.setState({isLoading:false})},2000)
+  }
+
+
   render() {
     const { open } = this.state;
     return (
@@ -137,7 +116,7 @@ class App extends Component {
             </Col>
           </Row>
         </Container>
-        <List tab={this.state.filtred}/>        
+        <List tab={this.state.filtred} isLoading={this.state.isLoading}/>        
       </div>
     );
   }
